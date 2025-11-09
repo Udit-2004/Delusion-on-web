@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udit_2004 - Animation Hub</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Fancy Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Playfair Display (for logo), Inter (for body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* "Weirdo Poetry" style logo */
+        .logo-style {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem; /* 40px */
+            font-weight: 800;
+            color: #00f57a; /* Cyber green */
+            line-height: 1;
+        }
+
+        /* The Hero Collage Section */
+        .hero-collage {
+            width: 100%;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            /* --- 
+              YOUR COLLAGE IMAGE GOES HERE 
+              Replace this 'background-image' URL with your own collage 
+            --- */
+            background-image: url('https://placehold.co/1600x500/111111/333333?text=Your+Animation+Collage+Goes+Here');
+            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax-like effect */
+            position: relative;
+            margin-bottom: 3rem; /* 48px */
+        }
+        .hero-collage::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        }
+        .hero-collage h1 {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        
+        /* Static image for cards */
+        .card-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            filter: grayscale(30%) brightness(0.9);
+            transition: filter 0.3s ease;
+        }
+        
+        .animation-card {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .animation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -5px rgba(0, 245, 122, 0.1);
+        }
+        .animation-card:hover .card-image {
+            filter: grayscale(0%) brightness(1);
+        }
+
+        /* Futuristic accent buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            border-radius: 0.375rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        .btn-primary {
+            background-color: #00f57a;
+            color: #0a0a0a;
+            border: 2px solid #00f57a;
+        }
+        .btn-primary:hover {
+            background-color: #0a0a0a;
+            color: #00f57a;
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #e5e5e5;
+            border: 2px solid #3a3a3a;
+        }
+        .btn-secondary:hover {
+            background-color: #2a2a2a;
+            color: white;
+            border-color: #4a4a4a;
+        }
+    </style>
+</head>
+<body class="bg-[#0a0a0a]">
+
+    <!-- Header Navigation -->
+    <nav class="bg-[#0a0a0a] border-b border-[#2a2a2a] sticky top-0 z-40">
+        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="logo-style">Udit_2004</div>
+            <ul class="flex space-x-6 items-center">
+                <li><a href="#" class="text-gray-300 hover:text-white font-medium">Home</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white font-medium">About Me</a></li>
+                <li><a href="#" class="text-gray-300 hover:text-white font-medium">Collections</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-collage">
+        <h1 class="font-serif text-4xl md:text-6xl font-extrabold text-white text-center px-4">
+            A Collection of Creative Visual Animations
+        </h1>
+    </header>
+
+    <!-- Main Grid for Animations (Responsive) -->
+    <!-- 1 col on mobile, 2 on tablet, 3 on desktop -->
+    <main class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Card 1: Floating Factory -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=CSS+Floating+Factory" alt="CSS Animation Floating Factory">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">CSS Animation Floating Factory</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/iconjunkie/pen/LpxbyM" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1NbNefVdLDZryWse0O7hCw-WBuT9VvKxm/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 2: Pure CSS Watch -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Pure+CSS+Watch" alt="Pure CSS Watch Keyframe Animation">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Pure CSS Watch Animation</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/Wujek_Greg/pen/KRXYpg" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1B7UY-pCIwhxoiz--TJ9StCRMZmoWZfKj/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 3: Material Design -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Material+Design+Animation" alt="CSS Animation Responsive Material Design">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Responsive Material Design</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/tyler-chipman/pen/GREbeeX" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1ovt3p-xHpO9oimoQz3vSv5G_eJsP87Rf/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 4: Floating Dust -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Floating+Dust+Keyframe" alt="Floating Dust Keyframe CSS">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Floating Dust Keyframe CSS</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/matthewwilliams/pen/Qbzmzr" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1vKlvf1ttzvDfSoI2cp4uErgErA4GYe7x/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 5: Funny Candle -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Funny+Candle+Animation" alt="Funny Candle Pure CSS Keyframe Animation">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Funny Candle Animation</h2>
+                <div class="flex gap-4">
+                    <!-- Note: Medium article links to Qbzmzr, same as above. User must have made a mistake. I will link to the one they *meant* to link to, which is likely this: -->
+                    <a href="https://codepen.io/kevindavid/pen/jOqBapN" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1WfHb4EB7tvYt5hP8JtMbUhtAiUKOjqci/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 6: Never Ending Box -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Never+Ending+Box" alt="Never Ending Box Keyframe CSS">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Never Ending Box Keyframe CSS</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/pawelqcm/pen/dMqrqd" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1GMelGrBGoDAET7tdpxpZYZtip_gQ9sYA/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 7: Double Helix -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Double+Helix+Animation" alt="Double Helix CSS Keyframe Animation">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Double Helix CSS Animation</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/tyler-chipman/pen/NWgQBxY" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1qpChcTZrmRwXFEiUi6fB1SMqL3rd_MW0/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 8: Border Animation -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Pure+CSS+Border+Animation" alt="Pure CSS Border Animation">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Pure CSS Border Animation</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/Rplus/pen/lEDBj" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1OV8CsZzqhNsj3ELAN2v4undN-yJNx507/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 9: 404 Error Page -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=404+Error+Page" alt="Pure CSS 404 Error Page Animation">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Pure CSS 404 Error Page</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/sqfreakz/pen/GJRJOY" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1Z3VWJeqhTtYk8ZWGXs0uc7fTyO0VwRKN/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 10: 3D Solar System -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=3D+Solar+System" alt="CSS Animated 3D Solar System">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">CSS Animated 3D Solar System</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/juliangarnier/pen/idhuG" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1dPQ7_m7VpaUZZYlh4gYDM4imP8tNbWRd/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 11: CSS Text Animation -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=CSS+Text+Animation" alt="CSS Text Animation">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">CSS Text Animation</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/yoannhel/pen/sJpDj" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1ReKgHISXjV9yumujhzW3x8RsusM08Rwe/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Card 12: Blue Hyperspace -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=CSS+Animated+Hyperspace" alt="CSS Animated Blue Hyperspace">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">CSS Animated Blue Hyperspace</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/tyler-chipman/pen/YzxKWMx" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1wYnWLJynXVJQRF0N4uxHeUdeXyiTYu2b/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 13: Ants on Sugar -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Ants+on+Sugar" alt="Ants on Sugar CSS Animation">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Ants on Sugar CSS Animation</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/thathurtabit/pen/bgWdge" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1ZrDCor40JxsLFMaQKfbc6mkeWRSOztEe/view?usp=sharing" target="_blank" classs="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 14: Noir Shadow -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Noir+Shadow+Animation" alt="Noir Shadow CSS Animation">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Noir Shadow CSS Animation</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/thathurtabit/pen/wJprxa" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/1uyDo3wASSo7LjSE3L88Ej-AP1ur49bYP/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Card 15: Underwater CSS -->
+        <article class="animation-card">
+            <figure>
+                <img class="card-image" src="https://placehold.co/600x400/222/555?text=Underwater+Pure+CSS" alt="Underwater Pure CSS Animation">
+            </figure>
+            <div class="p-6">
+                <h2 class="text-2xl font-serif font-bold text-white mb-3">Underwater Pure CSS Animation</h2>
+                <div class="flex gap-4">
+                    <a href="https://codepen.io/tOazty/pen/ZZqgQq" target="_blank" class="btn btn-primary">View Source</a>
+                    <a href="https://drive.google.com/file/d/14EbmgMF1RWJ1dOKgisX-b9BcS8neFWHQ/view?usp=sharing" target="_blank" class="btn btn-secondary">Download ZIP</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="text-center mt-12 py-10 border-t border-[#2a2a2a]">
+        <p class="text-gray-400">Need anything? Contact me at:</p>
+        <a href="mailto:dupinderdhiman0@gmail.com" class="text-[#00f57a] hover:underline font-medium">dupinderdhiman0@gmail.com</a>
+    </footer>
+
+</body>
+</html>
